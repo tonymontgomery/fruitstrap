@@ -14,12 +14,24 @@ Install and debug iPhone apps without using Xcode. Designed to work on unjailbro
 
 ## Usage
 
-* `fruitstrap [-d/--debug] [-i/--id device_id] -b/--bundle <app> [-a/--args arguments] [-t/--timeout timeout(seconds)] [-u/--unbuffered] [-g/--gdbargs gdb_arguments]`
-* Optional `-d` flag launches a remote GDB session after the app has been installed.
+`fruitstrap [-d/--debug] [-i/--id device_id] -b/--bundle <app> [-a/--args arguments] [-t/--timeout timeout(seconds)] [-u/--unbuffered] [-g/--gdbargs gdb_arguments]`
+
 * `<app>` must be an iPhone application bundle, *not* an IPA.
+* Optional `-d` flag launches a remote GDB session after the app has been installed.
 * Optional device id, useful when you have more than one iPhone/iPad connected to your computer
 * `<arguments>` are passed as argv to the running app.
 * `<gdb_arguments>` are passed to gdb.
+
+Commands available:
+
+* `install    [-i/--id device_id] -b/--bundle bundle.app [-a/--args arguments]`:
+   Install the specified app with optional arguments to the specified device, or all attached devices if none are specified. 
+
+* `uninstall  [-i/--id device_id] -b/--bundle bundle.app`: 
+  Removed the specified bundle identifier (eg com.foo.MyApp) from the specified device, or all attached devices if none are specified. 
+
+* `list-devices`:
+  List all attached devices. 
 
 ## Demo
 
